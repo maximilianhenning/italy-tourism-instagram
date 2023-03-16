@@ -14,20 +14,21 @@ l = Instaloader(download_videos = False,
 
 def account_scraper(account):
     print(account)
-    profile = Profile.from_username(l.context, account)
-    posts = profile.get_posts()
+    #profile = Profile.from_username(l.context, account)
+    #posts = profile.get_posts()
+    posts = ["a", "b", "c"]
     post_counter = 0
     while True:
         for post in posts: 
-            l.download_post(post, profile)
+            #l.download_post(post, profile)
             post_counter += 1
-            time.sleep(6)
-            print(post_counter)
+            #time.sleep(6)
+            print(post)
             if post_counter == 10:
                 print("break")
                 posts = []
                 break
         break
         
-for account in accounts:
+for account in [0, 1, 2, 3, 4, 5, 6]:
     account_scraper(account)
